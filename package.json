@@ -1,0 +1,19 @@
+{
+  "name": "untereats",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-business last-mile delivery & AI dispatch MVP",
+  "workspaces": [
+    "packages/backend",
+    "packages/frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,green \"npm run dev --workspace=@untereats/backend\" \"npm run dev --workspace=@untereats/frontend\"",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "typecheck": "npm run typecheck --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
